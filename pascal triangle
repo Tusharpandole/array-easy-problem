@@ -1,0 +1,10 @@
+question = value in the particular index at the given row and column formula is = r-1
+                                                                                     (c)
+                                                                                       c-1
+   where r is row and c is column .
+   another question = value for the whole particular row 
+   calculating the value ncr for every index of the row is o(n^2) so the sortcut is 
+   for(int i = 0 ; i < k ; ++i){
+   res *=(n-1) ;
+   res /= (i+1) ;
+   }
