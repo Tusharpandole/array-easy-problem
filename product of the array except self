@@ -54,7 +54,7 @@ public:
     }
 };
 
-#second approach time complexity = O(n) and space complexity = O(n) 
+#second approach time complexity = O(n) and space complexity = O(n) without using the division operation .
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
