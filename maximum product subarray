@@ -1,0 +1,20 @@
+#optimal approach 
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        int n = nums.size() ;
+        int ans = nums[0] ;
+        int ma = nums[0] ;
+        int mi = nums[0] ;
+        for(int i=1;i<n;i++){
+           if(nums[i] <0){
+               swap(ma ,mi) ;
+           }
+           ma = max(nums[i],ma*nums[i]);
+           mi = min(nums[i],mi*nums[i]) ;
+           ans= max(ans , ma) ;
+        }
+        return ans ;
+    }
+};
+#brute force = use two loop find each and every sub array and traverse it and find maximum time complexity = O(n^2) .
