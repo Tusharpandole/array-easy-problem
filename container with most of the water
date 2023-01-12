@@ -1,0 +1,35 @@
+#optimal solution time complexity =O(n) and space complexity = O(1)
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int n = height.size() ;
+        int area ;
+        int maxarea=0 ;
+        int s = 0 , e = n-1 ;
+        while(s<e){
+            int lh = height[s] ;
+            int rh = height[e] ;
+            int min_h = min(lh,rh) ;
+            maxarea = max(maxarea ,min_h*(e-s)) ;
+            if(lh < rh)s++ ;
+            else e-- ;
+        }
+        return maxarea ;
+    }
+};
+
+#brute force time complexity = O(n^2) and space complexity = O(1)
+class Solution {
+public:
+    int maxArea(vector<int>& height) {
+        int n = height.size() ;
+        int area = INT_MIN ;
+        int maxarea = 0 ;
+        for(int i = 0 ; i < n ; i++){
+            for(int j = i+1 ; j < n ; j++){
+                area = max(area , min(height[i],height[j])*(j-i)) ;
+            }
+        }
+        return area ;
+    }
+};
